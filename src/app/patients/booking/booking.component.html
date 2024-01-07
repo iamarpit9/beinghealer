@@ -1,259 +1,273 @@
-	<!-- Breadcrumb -->
-			<!-- <div class="breadcrumb-bar">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<div class="col-md-12 col-12">
-							<nav aria-label="breadcrumb" class="page-breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a [routerLink]="''">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Booking</li>
-								</ol>
-							</nav>
-							<h2 class="breadcrumb-title">Booking</h2>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- /Breadcrumb -->
+<!-- Breadcrumb -->
+<!-- <div class="breadcrumb-bar">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-md-12 col-12">
+        <nav aria-label="breadcrumb" class="page-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="''">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Booking</li>
+          </ol>
+        </nav>
+        <h2 class="breadcrumb-title">Booking</h2>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- /Breadcrumb -->
 
-			<!-- Page Content -->
-			<div class="content">
-				<div class="container">
+<!-- Page Content -->
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="booking-doc-info" *ngIf="doctorDetails">
+              <a
+                [routerLink]="'/patients/doctor-profile'"
+                [queryParams]="{ id: doctorDetails.id }"
+                class="booking-doc-img"
+              >
+                <img src="{{ doctorDetails.profile }}" alt="User Image" />
+              </a>
+              <div class="booking-info">
+                <h4>
+                  <a
+                    [routerLink]="'/patients/doctor-profile'"
+                    [queryParams]="{ id: doctorDetails.id }"
+                    >{{ doctorDetails.doctor_name }}</a
+                  >
+                </h4>
+                <div class="rating">
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star me-1"></i>
+                  <span class="d-inline-block average-rating">35</span>
+                </div>
+                <p class="text-muted mb-0">
+                  <i class="fas fa-map-marker-alt"></i>
+                  {{ doctorDetails.location }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Calendly inline widget begin -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/beinghealer/hypnotherapy-session?hide_gdpr_banner=1&text_color=242424&primary_color=a0bce4"
+            style="min-width: 320px; height: 700px"
+          ></div>
+          <!-- Calendly inline widget end -->
+          <!--								<div class="col-12 col-sm-4 col-md-6">-->
+          <!--									<h4 class="mb-1">{{getCurrentDateString()}}</h4>-->
+          <!--									<p class="text-muted">{{getCurrentDayName()}}</p>-->
+          <!--								</div>-->
+          <!--								<div class="col-12 col-sm-8 col-md-6 text-sm-end">-->
+          <!--                  <span>Choose date range to request available time slots</span>-->
+          <!--									<div class="bookingrange btn btn-white btn-sm mb-3">-->
+          <!--										<i class="far fa-calendar-alt me-2"></i>-->
+          <!--										<span></span>-->
+          <!--										<i class="fas fa-chevron-down ms-2"></i>-->
+          <!--									</div>-->
+          <!--								</div>-->
+          <!--								&lt;!&ndash; <div class="col-12 col-sm-8 col-md-6 text-sm-end">-->
+          <!--									<div class="bookingrange btn btn-white btn-sm mb-3">-->
+          <!--										<i class="far fa-calendar-alt me-2"></i>-->
+          <!--										<input name="daterangeInput" id="daterange" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />-->
+          <!--										<i class="fas fa-chevron-down ms-2"></i>-->
+          <!--									</div>-->
+          <!--								</div> &ndash;&gt;-->
+          <!--                            </div>-->
+          <!--							&lt;!&ndash; Schedule Widget &ndash;&gt;-->
+          <!--							<div class="card booking-schedule schedule-widget">-->
 
-					<div class="row">
-						<div class="col-12">
+          <!--								&lt;!&ndash; Schedule Header &ndash;&gt;-->
+          <!--&lt;!&ndash;								<div class="schedule-header">&ndash;&gt;-->
+          <!--&lt;!&ndash;									<div class="row">&ndash;&gt;-->
+          <!--&lt;!&ndash;										<div class="col-md-12">&ndash;&gt;-->
 
-							<div class="card">
-								<div class="card-body">
-									<div class="booking-doc-info" *ngIf="doctorDetails">
-										<a [routerLink]="'/patients/doctor-profile'"  [queryParams]="{id: doctorDetails.id}" class="booking-doc-img">
-											<img src={{doctorDetails.profile}} alt="User Image">
-										</a>
-										<div class="booking-info">
-											<h4><a [routerLink]="'/patients/doctor-profile'"  [queryParams]="{id: doctorDetails.id}">{{doctorDetails.doctor_name}}</a></h4>
-											<div class="rating">
-												<i class="fas fa-star filled me-1"></i>
-												<i class="fas fa-star filled me-1"></i>
-												<i class="fas fa-star filled me-1"></i>
-												<i class="fas fa-star filled me-1"></i>
-												<i class="fas fa-star me-1"></i>
-												<span class="d-inline-block average-rating">35</span>
-											</div>
-											<p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i> {{doctorDetails.location}}</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/beinghealer/hypnotherapy-session?hide_gdpr_banner=1&text_color=242424&primary_color=a0bce4" style="min-width:320px;height:700px;"></div>
-                <!-- Calendly inline widget end -->
-<!--								<div class="col-12 col-sm-4 col-md-6">-->
-<!--									<h4 class="mb-1">{{getCurrentDateString()}}</h4>-->
-<!--									<p class="text-muted">{{getCurrentDayName()}}</p>-->
-<!--								</div>-->
-<!--								<div class="col-12 col-sm-8 col-md-6 text-sm-end">-->
-<!--                  <span>Choose date range to request available time slots</span>-->
-<!--									<div class="bookingrange btn btn-white btn-sm mb-3">-->
-<!--										<i class="far fa-calendar-alt me-2"></i>-->
-<!--										<span></span>-->
-<!--										<i class="fas fa-chevron-down ms-2"></i>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--								&lt;!&ndash; <div class="col-12 col-sm-8 col-md-6 text-sm-end">-->
-<!--									<div class="bookingrange btn btn-white btn-sm mb-3">-->
-<!--										<i class="far fa-calendar-alt me-2"></i>-->
-<!--										<input name="daterangeInput" id="daterange" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />-->
-<!--										<i class="fas fa-chevron-down ms-2"></i>-->
-<!--									</div>-->
-<!--								</div> &ndash;&gt;-->
-<!--                            </div>-->
-<!--							&lt;!&ndash; Schedule Widget &ndash;&gt;-->
-<!--							<div class="card booking-schedule schedule-widget">-->
+          <!--&lt;!&ndash;											&lt;!&ndash; Day Slot &ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;											<div class="day-slot">&ndash;&gt;-->
+          <!--&lt;!&ndash;												<ul>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li class="left-arrow">&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a >&ndash;&gt;-->
+          <!--&lt;!&ndash;															<i class="fa fa-chevron-left"></i>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;&lt;!&ndash;                          <li *ngFor="let dayDetail of get7DayDetails()">&ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;&lt;!&ndash;                            <span>{{dayDetail.day}}</span>&ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;&lt;!&ndash;                            <span class="slot-date">{{dayDetail.dateMonth}}<small class="slot-year">{{dayDetail.year}}</small></span>&ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;&lt;!&ndash;                          </li>&ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Mon</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">11 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Tue</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">12 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Wed</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">13 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Thu</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">14 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Fri</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">15 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Sat</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">16 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span>Sun</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<span class="slot-date">17 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li class="right-arrow">&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a >&ndash;&gt;-->
+          <!--&lt;!&ndash;															<i class="fa fa-chevron-right"></i>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;												</ul>&ndash;&gt;-->
+          <!--&lt;!&ndash;											</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;											&lt;!&ndash; /Day Slot &ndash;&gt;&ndash;&gt;-->
 
-<!--								&lt;!&ndash; Schedule Header &ndash;&gt;-->
-<!--&lt;!&ndash;								<div class="schedule-header">&ndash;&gt;-->
-<!--&lt;!&ndash;									<div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;										<div class="col-md-12">&ndash;&gt;-->
+          <!--&lt;!&ndash;										</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;									</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;								</div>&ndash;&gt;-->
+          <!--								&lt;!&ndash; /Schedule Header &ndash;&gt;-->
 
-<!--&lt;!&ndash;											&lt;!&ndash; Day Slot &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;											<div class="day-slot">&ndash;&gt;-->
-<!--&lt;!&ndash;												<ul>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li class="left-arrow">&ndash;&gt;-->
-<!--&lt;!&ndash;														<a >&ndash;&gt;-->
-<!--&lt;!&ndash;															<i class="fa fa-chevron-left"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                          <li *ngFor="let dayDetail of get7DayDetails()">&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                            <span>{{dayDetail.day}}</span>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                            <span class="slot-date">{{dayDetail.dateMonth}}<small class="slot-year">{{dayDetail.year}}</small></span>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                          </li>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Mon</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">11 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Tue</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">12 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Wed</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">13 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Thu</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">14 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Fri</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">15 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Sat</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">16 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span>Sun</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														<span class="slot-date">17 Nov <small class="slot-year">2019</small></span>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li class="right-arrow">&ndash;&gt;-->
-<!--&lt;!&ndash;														<a >&ndash;&gt;-->
-<!--&lt;!&ndash;															<i class="fa fa-chevron-right"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;												</ul>&ndash;&gt;-->
-<!--&lt;!&ndash;											</div>&ndash;&gt;-->
-<!--&lt;!&ndash;											&lt;!&ndash; /Day Slot &ndash;&gt;&ndash;&gt;-->
+          <!--								&lt;!&ndash; Schedule Content &ndash;&gt;-->
+          <!--&lt;!&ndash;								<div class="schedule-cont">&ndash;&gt;-->
+          <!--&lt;!&ndash;									<div class="row">&ndash;&gt;-->
+          <!--&lt;!&ndash;										<div class="col-md-12">&ndash;&gt;-->
 
-<!--&lt;!&ndash;										</div>&ndash;&gt;-->
-<!--&lt;!&ndash;									</div>&ndash;&gt;-->
-<!--&lt;!&ndash;								</div>&ndash;&gt;-->
-<!--								&lt;!&ndash; /Schedule Header &ndash;&gt;-->
+          <!--&lt;!&ndash;											&lt;!&ndash; Time Slot &ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;											<div class="time-slot">&ndash;&gt;-->
+          <!--&lt;!&ndash;												<ul class="clearfix">&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>12:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>01:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>02:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>03:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>04:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>05:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>06:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>07:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>08:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>09:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing selected">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;													<li>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
+          <!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;														</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;													</li>&ndash;&gt;-->
+          <!--&lt;!&ndash;												</ul>&ndash;&gt;-->
+          <!--&lt;!&ndash;											</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;											&lt;!&ndash; /Time Slot &ndash;&gt;&ndash;&gt;-->
 
-<!--								&lt;!&ndash; Schedule Content &ndash;&gt;-->
-<!--&lt;!&ndash;								<div class="schedule-cont">&ndash;&gt;-->
-<!--&lt;!&ndash;									<div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;										<div class="col-md-12">&ndash;&gt;-->
+          <!--&lt;!&ndash;										</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;									</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;								</div>&ndash;&gt;-->
+          <!--								&lt;!&ndash; /Schedule Content &ndash;&gt;-->
 
-<!--&lt;!&ndash;											&lt;!&ndash; Time Slot &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;											<div class="time-slot">&ndash;&gt;-->
-<!--&lt;!&ndash;												<ul class="clearfix">&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>12:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>01:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>02:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>03:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>04:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>05:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>06:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>07:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>08:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>09:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing selected">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">PM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;													<li>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>9:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>10:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;														<a class="timing">&ndash;&gt;-->
-<!--&lt;!&ndash;															<span>11:00</span><span class="ms-1">AM</span>&ndash;&gt;-->
-<!--&lt;!&ndash;														</a>&ndash;&gt;-->
-<!--&lt;!&ndash;													</li>&ndash;&gt;-->
-<!--&lt;!&ndash;												</ul>&ndash;&gt;-->
-<!--&lt;!&ndash;											</div>&ndash;&gt;-->
-<!--&lt;!&ndash;											&lt;!&ndash; /Time Slot &ndash;&gt;&ndash;&gt;-->
+          <!--                <form>-->
+          <!--                  <div>-->
+          <!--                    <label>Name <span class="text-danger">*</span></label>-->
+          <!--                    <input type="text" class="form-control" name="name" [(ngModel)]="name">-->
+          <!--                  </div>-->
+          <!--                  <div>-->
+          <!--                    <label>Your Email Address <span class="text-danger">*</span></label>-->
+          <!--                    <input type="email" class="form-control" name="email"  [(ngModel)]="email">-->
+          <!--                  </div>-->
+          <!--                  <div>-->
+          <!--                    <label>Message <span class="text-info">(Optional)</span></label>-->
+          <!--                    <textarea rows="4" class="form-control" name="usercomment" [(ngModel)]="usercomment"></textarea>-->
+          <!--                  </div>-->
+          <!--                </form>-->
 
-<!--&lt;!&ndash;										</div>&ndash;&gt;-->
-<!--&lt;!&ndash;									</div>&ndash;&gt;-->
-<!--&lt;!&ndash;								</div>&ndash;&gt;-->
-<!--								&lt;!&ndash; /Schedule Content &ndash;&gt;-->
+          <!--							</div>-->
+          <!--							&lt;!&ndash; /Schedule Widget &ndash;&gt;-->
 
-<!--                <form>-->
-<!--                  <div>-->
-<!--                    <label>Name <span class="text-danger">*</span></label>-->
-<!--                    <input type="text" class="form-control" name="name" [(ngModel)]="name">-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    <label>Your Email Address <span class="text-danger">*</span></label>-->
-<!--                    <input type="email" class="form-control" name="email"  [(ngModel)]="email">-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    <label>Message <span class="text-info">(Optional)</span></label>-->
-<!--                    <textarea rows="4" class="form-control" name="usercomment" [(ngModel)]="usercomment"></textarea>-->
-<!--                  </div>-->
-<!--                </form>-->
-
-<!--							</div>-->
-<!--							&lt;!&ndash; /Schedule Widget &ndash;&gt;-->
-
-<!--							&lt;!&ndash; Submit Section &ndash;&gt;-->
-<!--&lt;!&ndash;							<div class="submit-section proceed-btn text-end">&ndash;&gt;-->
-<!--&lt;!&ndash;								<a [routerLink]="'/patients/checkout'" class="btn btn-primary submit-btn">Proceed to Pay</a>&ndash;&gt;-->
-<!--&lt;!&ndash;							</div>&ndash;&gt;-->
-<!--              <div class="submit-section proceed-btn text-end">-->
-<!--                <button class="btn btn-primary submit-btn" type="submit" (click)="sendMessage()">Request available slots</button>-->
-<!--              </div>-->
-<!--							&lt;!&ndash; /Submit Section &ndash;&gt;-->
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<!-- /Page Content -->
+          <!--							&lt;!&ndash; Submit Section &ndash;&gt;-->
+          <!--&lt;!&ndash;							<div class="submit-section proceed-btn text-end">&ndash;&gt;-->
+          <!--&lt;!&ndash;								<a [routerLink]="'/patients/checkout'" class="btn btn-primary submit-btn">Proceed to Pay</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;							</div>&ndash;&gt;-->
+          <!--              <div class="submit-section proceed-btn text-end">-->
+          <!--                <button class="btn btn-primary submit-btn" type="submit" (click)="sendMessage()">Request available slots</button>-->
+          <!--              </div>-->
+          <!--							&lt;!&ndash; /Submit Section &ndash;&gt;-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Content -->
+</div>

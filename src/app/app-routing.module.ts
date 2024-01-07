@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import {AuthGuard} from "./service/auth-guard.service";
+import { AuthGuard } from './service/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,8 +14,8 @@ const routes: Routes = [
       import('./doctor/doctor.module').then((m) => m.DoctorModule),
     canActivate: [AuthGuard],
     data: {
-      role: 'healer'
-    }
+      role: 'healer',
+    },
   },
   {
     path: 'patients',
@@ -24,8 +24,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {
       role: 'patient',
-      exclude: ['/patients/search-doctor', '/patients/doctor-profile?id=1']
-    }
+      exclude: ['/patients/search-doctor', '/patients/doctor-profile?id=1'],
+    },
   },
   {
     path: 'blank',
@@ -129,8 +129,8 @@ const routes: Routes = [
       import('./admin/admin.module').then((m) => m.AdminModule),
     canActivate: [AuthGuard],
     data: {
-      role: 'admin'
-    }
+      role: 'admin',
+    },
   },
 ];
 
@@ -140,10 +140,10 @@ const routes: Routes = [
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
       // scrollOffset: [0, 50],
-    onSameUrlNavigation: 'reload',
-    // preloadingStrategy: PreloadAllModules,
-    relativeLinkResolution: 'legacy'
-}),
+      onSameUrlNavigation: 'reload',
+      // preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy',
+    }),
   ],
   exports: [RouterModule],
 })
