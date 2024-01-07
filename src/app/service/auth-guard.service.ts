@@ -59,9 +59,15 @@ export class AuthGuard  implements CanActivate, CanActivateChild, CanDeactivate<
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     // if state.url(current request path) is there in route.data['exclude'] (array of excluded paths), then authenticate  successfully
 
-    if(route.data['exclude'] &&
-      route.data['exclude'].filter((excluded: string) => state.url.indexOf(excluded)).length >  0) {
-      return true;
+    // TODO: state.url.includes(excluded) solves the problem for excluding urls with request params.
+    // But it introduces a problem where if /excluded-url is excluded and request is for /excluded-url-suffix will
+    // also get excluded unwantingly. The solution could be to prefix all excluded routes with /public/whatever,
+    // then exclude all routes starting with /public
+    if (route.data['exclude']) {
+      const isExcluded = route.data['exclude'].some((excluded: string) => state.url.includes(excluded));
+      if (isExcluded) {
+        return true;
+      }
     }
 
     // if(route.data['exclude'] && route.data['exclude'].indexOf(state.url) > -1) {

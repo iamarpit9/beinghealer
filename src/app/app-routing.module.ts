@@ -15,6 +15,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {
       role: 'healer',
+      exclude: ['/doctor/doctor-register']
     },
   },
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {
       role: 'patient',
-      exclude: ['/patients/search-doctor', '/patients/doctor-profile?id=1'],
+      exclude: ['/patients/search-doctor', '/patients/doctor-profile'],
     },
   },
   {

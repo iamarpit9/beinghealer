@@ -344,7 +344,7 @@ export class HomeComponent implements OnInit , AfterContentChecked{
       reviews: "(66)",
       address: "Panipat, India",
       date: "Available on Fri, 20 Mar",
-      amount: "₹2000 per Hour",
+      amount: "₹3000 per Hour",
     },
     {
       name: "Adarsh Sachdeva",
