@@ -275,9 +275,9 @@ export class DataService implements InMemoryDbService {
             type : "Female",
             location : "Online & Panipat, India",
             availableTime : "10 am",
-            consulting_fees : "₹2000",
-            booking_fees : "₹500",
-            video_call : "₹1500",
+            consulting_fees : "₹3000",
+            booking_fees : "₹1000",
+            video_call : "₹3000",
             description : "Certified clinical hypnotherapist Anita has a lot of heart and expertise. More than 20 years ago, she also became a Reiki master. Anita, the center's founder, has spent the better part of the past 35 years in leadership roles in the educational sector, all the while walking the path of spirituality and guiding her students along that path. Many of her students' lives were altered for the better as a result of the advice she gave them. Several Divine Characters have been bestowed upon her. A lot of people have benefited from her sessions in terms of finding inner peace and overcoming personal health and wellness challenges, whether those challenges be mental, emotional, or spiritual.\n" +
               "Anita knows firsthand the transformative potential of hypnotherapy and is motivated to work in this field because of this knowledge. She was able to make progress in her life and gain equilibrium and perspective with the help of hypnotherapy. She gets a kick out of teaching her clients new techniques for relieving tension and establishing a sense of inner strength, independence, and serenity. During each session, Anita tailors her approach to the specific goals of her client."
         },
