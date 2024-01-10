@@ -7970,14 +7970,17 @@ html.menu-opened body {
 		margin-top: 20px;
 	}
 	.footer .footer-nav {
-		flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 	}
 	.footer-nav li:not(:last-child):after {
 		border: none;
 	}
 	.footer-nav li {
-		margin: 7px 0px;
-	}
+    margin: 7px 0px;
+    flex-basis: 48%; /* Adjust this percentage for desired spacing */
+    text-align: center; /* Center align the text within each item */
+  }
 	.footer-nav {
 		margin: 20px 0 20px;
 	}
