@@ -139,12 +139,22 @@
   <url>
     <loc>https://www.beinghealer.com/terms-conditions</loc>
     <lastmod>2024-01-10T12:04:24+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.20</priority>
   </url>
   <url>
     <loc>https://www.beinghealer.com/privacy-policy</loc>
     <lastmod>2024-01-10T12:04:24+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.20</priority>
+  </url>
+  <url>
+    <loc>https://www.beinghealer.com/about-us</loc>
+    <lastmod>2024-01-10T12:04:24+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.beinghealer.com/refund</loc>
+    <lastmod>2024-01-10T12:04:24+00:00</lastmod>
+    <priority>0.20</priority>
   </url>
 
 
