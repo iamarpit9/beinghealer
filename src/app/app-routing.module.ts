@@ -125,6 +125,20 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'about-us',
+    loadChildren: () =>
+      import('./about-us/about-us.module').then(
+        (m) => m.AboutUsModule
+      ),
+  },
+  {
+    path: 'refund',
+    loadChildren: () =>
+      import('./refund/refund.module').then(
+        (m) => m.RefundModule
+      ),
+  },
+  {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),

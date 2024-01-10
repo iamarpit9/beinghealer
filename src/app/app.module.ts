@@ -24,8 +24,10 @@ import {StorageService} from "./service/storage.service";
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import {CacheControlInterceptor} from "./cache-control.interceptor";
+import { AboutUsComponent } from './about-us/about-us.component';
+import { RefundComponent } from './refund/refund.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, PaginationComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, PaginationComponent, AboutUsComponent, RefundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
